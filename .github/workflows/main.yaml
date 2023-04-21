@@ -11,7 +11,7 @@ jobs:
         run: mvn package -DskipTests=true
 
   deploy:
-    needs: qa
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: despliegue
