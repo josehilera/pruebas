@@ -4,7 +4,7 @@ on: push
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: empaquetar
@@ -12,7 +12,7 @@ jobs:
 
   deploy:
     needs: qa
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: despliegue
         run: echo "despliegue"
