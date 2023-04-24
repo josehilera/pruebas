@@ -13,11 +13,11 @@ jobs:
           java-version: '1.8'
       - name: Build with Maven
         run: ls
-        working-directory: balontesto
-      - name: Azure WebApp
-        uses: Azure/webapps-deploy@v2
-        with:
-          app-name: baloncestohilera
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: Baloncesto/target/*.war
+        #working-directory: balontesto
+#      - name: Azure WebApp
+#        uses: Azure/webapps-deploy@v2
+#        with:
+#          app-name: baloncestohilera
+#          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+#          package: Baloncesto/target/*.war
 
