@@ -3,10 +3,10 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>IC</groupId>
-    <artifactId>baloncestohilera2</artifactId>
+    <artifactId>Baloncesto</artifactId>
     <packaging>war</packaging>
     <version>1</version>
-    <name>baloncestohilera2</name>
+    <name>Baloncesto</name>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -31,7 +31,7 @@
     </dependencies>
 
     <build>
-        <finalName>baloncestohilera2</finalName>
+        <finalName>Baloncesto</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
