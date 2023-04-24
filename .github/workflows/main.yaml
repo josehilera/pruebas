@@ -7,12 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: empaquetar
-        run: mvn package -DskipTests=true
+      - name: Setup Java 1.8.x
+        uses: actions/setup-java@v1
+        with:
+          java-version: '1.8'
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+        working-directory: Baloncesto
+      - name: Azure WebApp
+        uses: Azure/webapps-deploy@v2
+        with:
+          app-name: baloncestohilera
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: Baloncesto/target/*.war
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: despliegue
-        run: echo "despliegue"
