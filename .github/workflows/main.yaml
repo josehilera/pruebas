@@ -13,7 +13,7 @@ jobs:
           java-version: '1.8'
       - name: Build with Maven
         run: mvn package
-        working-directory: Baloncesto
+        working-directory: balontesto
       - name: Azure WebApp
         uses: Azure/webapps-deploy@v2
         with:
