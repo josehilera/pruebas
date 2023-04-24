@@ -3,8 +3,27 @@ name: CI
 on: push
 
 jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    steps:
+    - name: prueba
+      run: echo "Prueba"
+  
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    needs: prueba
+    steps:
+      - uses: trstringer/manual-approval@v1
+        with:
+          secret: ${{ secrets.TOKEN }}
+          approvers: josehilera
+      - name: Deploy to production
+        run: echo deploying
+
   build:
     runs-on: ubuntu-latest
+    needs: deploy
     steps:
       - uses: actions/checkout@v3
       - name: Setup Java 1.8.x
