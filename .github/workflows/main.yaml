@@ -12,7 +12,9 @@ jobs:
         with:
           java-version: '1.8'
       - name: Build with Maven
-        run: ls
+        run: |
+          pwd
+          ls
         #working-directory: balontesto
 #      - name: Azure WebApp
 #        uses: Azure/webapps-deploy@v2
